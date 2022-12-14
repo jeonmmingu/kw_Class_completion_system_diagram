@@ -3,29 +3,30 @@
 #include <string.h>
 #include <stdlib.h>
 #include <stdbool.h>
+#include <windows.h>
 
 typedef struct subject
 {
-    // Basic information
-    int school_year;                    // í•™ë…„
-    int semester;                       // í•™ê¸°
-    char subject_name[100];              // ê³¼ëª©ëª…
-    
-    // Subject type
-    char subject_type[100];
+	// Basic information
+	int school_year;	// ÇĞ³â
+	int semester;	// ÇĞ±â
+	char subject_name[100];	// °ú¸ñ¸í
 
-    // ì „ê³µ í•„ìˆ˜ check
-    bool essential_major_in;
-    
-    // ì„ í›„ìˆ˜ ê³¼ëª©
-    char previous_subject[100];
-    char next_subject[100];
+	// Subject type
+	char subject_type[100];
 
-    // ì„ í›„ìˆ˜ ê³¼ëª© í¬ì¸í„°
-    struct subject* pPrevious;
-    struct subject* pNext;
+	// ÇÊ¼ö ¼ö°­ ±³°ú¸ñ Ã¼Å©
+	bool essential_major_in;
 
-    // list ì—°ê²° ì‹œ ë‹¤ìŒì„ ë‹¤ìŒì„ ê°€ë¦¬í‚¤ëŠ” í¬ì¸í„°
-    struct subject* next;
+	// ¼±ÈÄ¼ö ±³°ú¸ñ
+	char previous_subject[100];
+	char next_subject[100];
+
+	// ¼±ÈÄ¼ö ±³°ú¸ñ Æ÷ÀÎÅÍ
+	struct subject* pPrevious;
+	struct subject* pNext;
+
+	// ´ÙÀ½ ³ëµå¸¦ °¡¸®Å°´Â Æ÷ÀÎÅÍ
+	struct subject* next;
 
 } subject;
